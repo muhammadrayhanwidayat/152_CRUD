@@ -1,4 +1,11 @@
 const express = require("express");
-const mysql = require("mysql2"); // Assuming it's mysql2, though the code uses 'mysql'
+const mysql = require("mysql2"); 
 const app = express();
 const PORT = 3000;
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
